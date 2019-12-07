@@ -15,7 +15,8 @@
 
 class StudentCourses
 {
-	// add required members
+	Student student;
+
 public:
 
 	Student get_student() const { return student; }
