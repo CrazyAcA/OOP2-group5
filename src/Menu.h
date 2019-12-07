@@ -33,15 +33,15 @@ private:
 	GroupOfStudents gs;
 
 public:
-	Menu();
+	Menu() {};
 
-	bool is_id_valid(string id) const;
-	void display_menu() const;
-	void display_info() const;
-	void read_students();
-	void display_students() const;
-	void display_students_sorted() const;
-	void display_highest_score() const;
+	bool is_id_valid(string id) const {};
+	void display_menu() const {};
+	void display_info() const {};
+	void read_students() {};
+	void display_students() const {};
+	void display_students_sorted() const {};
+	void display_highest_score() const {};
 };
 
 #endif /*MENU_H_*/
