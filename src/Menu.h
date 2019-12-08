@@ -43,9 +43,6 @@ public:
 	void display_students_sorted() const {};
 	void display_highest_score() const {};
 
-	//Dodatne funkcije za citanje
-	void read_textFile();
-	void read_binaryFile() const {};
 };
 
 #endif /*MENU_H_*/

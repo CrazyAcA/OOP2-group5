@@ -35,7 +35,7 @@ int main()
 			} 
 			else
 			{	// option < 1 || option > Menu::EXIT */
-				cerr << "Los unos! Pokusajte ponovo:" << endl;
+				cerr << "Unos mora biti jedan od ponudjenih cifara! Pokusajte ponovo:" << endl;
 				cout << "> ";
 			}
 		}
