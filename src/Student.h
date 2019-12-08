@@ -12,21 +12,22 @@
 
 #include <string>
 #include <iostream>
-
+using namespace std;
 using std::string;
 
 class Student
 {
 private:
-	// add required members
-
+	string firstName;
+	string lastName;
+	string ID;
 public:
-	// add required constructors
-
-	string get_first_name() const;
-	string get_last_name() const;
-	string get_id() const;
-	void display() const;
+	Student();//Prazan konstuktor
+	Student(string ime, string prezime, string id);//Konstuktor sa parametrima
+	string get_first_name();
+	string get_last_name();
+	string get_id();
+	void display();
 };
 
 #endif /*STUDENT_H_*/

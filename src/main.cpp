@@ -16,7 +16,6 @@ int main()
 	Menu m;
 	int option;
 	m.display_menu();
-	
 	do
 	{
 		cout << "> ";
@@ -28,14 +27,15 @@ int main()
 				char ch;
 				while (cin>>ch && !isdigit(ch))
 				{
-					cerr << "Invalid input; please try again" << endl;
+					cerr << "Los unos! Pokusajte ponovo:" << endl;
 					cout << "> ";
+					
 				}
 				cin.unget();
 			} 
 			else
 			{	// option < 1 || option > Menu::EXIT */
-				cerr << "Invalid input; please try again" << endl;
+				cerr << "Los unos! Pokusajte ponovo:" << endl;
 				cout << "> ";
 			}
 		}

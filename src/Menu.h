@@ -13,7 +13,7 @@
 #include <string>
 #include <stdexcept>
 #include "GroupOfStudents.h"
-
+using namespace std;
 using std::string;
 
 class Menu
@@ -36,12 +36,16 @@ public:
 	Menu() {};
 
 	bool is_id_valid(string id) const {};
-	void display_menu() const {};
-	void display_info() const {};
-	void read_students() {};
+	void display_menu();
+	void display_info();
+	void read_students();
 	void display_students() const {};
 	void display_students_sorted() const {};
 	void display_highest_score() const {};
+
+	//Dodatne funkcije za citanje
+	void read_textFile();
+	void read_binaryFile() const {};
 };
 
 #endif /*MENU_H_*/
