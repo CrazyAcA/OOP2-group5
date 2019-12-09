@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="src\Courses.cpp" />
     <ClCompile Include="src\GroupOfStudents.cpp" />
+    <ClCompile Include="src\InputOutput.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Student.cpp" />
@@ -143,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="src\Courses.h" />
     <ClInclude Include="src\GroupOfStudents.h" />
+    <ClInclude Include="src\InputOutput.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Student.h" />
     <ClInclude Include="src\StudentCourses.h" />
