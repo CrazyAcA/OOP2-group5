@@ -6,13 +6,18 @@ using namespace std;
 #include <string>
 #include <sstream>
 #include <vector>
+<<<<<<< Updated upstream
 #include <iterator>
+=======
+#include"Student.h"
+>>>>>>> Stashed changes
 
 void InputOutput::read_textFile(string path) {
 
 	std::ifstream file(path);
 	string line;
 	int i = -1;
+<<<<<<< Updated upstream
 	vector<Student> studenti;
 	
 	while (std::getline(file, line)) {
@@ -34,7 +39,36 @@ void InputOutput::read_textFile(string path) {
 	for (int j = 0; j < studenti.size(); j++) {//Ne znam kako da uzmem po jednu rec iz vektora(sadasnji oblik je: ime prezime id)
 		Student* Trenutni = &studenti[j];
 		Trenutni->get_first_name();
+=======
+	vector<string> studenti;
+
+	try {
+		if (file >> ime >> prezime >> id) {
+			cout << ime << prezime << id << endl;
+		}
+>>>>>>> Stashed changes
 	}
+	catch (...) {
+			cout << "ge" << endl;
+		}
+	
+	
+	//while (std::getline(file, line)) {
+	//	// Rad sa linijom teksta
+	//	++i;
+	//	if (i % 4 == 0) {//Sve linije gde su studenti stavlja u vektor studenata
+	//		if (file >> ime >> prezime >> id) {
+	//			Student s = Student(ime, prezime, id);
+	//			studenti.push_back(line);
+	//			cout << s.get_first_name() << endl;
+	//			cout << line << endl;
+	//		}
+	//	}
+	//}
+
+	//for (int j = 0; j < studenti.size(); j++) {//Ne znam kako da uzmem po jednu rec iz vektora(sadasnji oblik je: ime prezime id)
+	//	cout << j << endl;
+	//}
 }
 
 
