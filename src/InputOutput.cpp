@@ -7,7 +7,9 @@ using namespace std;
 
 
 void InputOutput::read_textFile(string path) {
-
+	string ime;
+	string prezime;
+	string id;
 	std::ifstream file(path);
 	string line;
 	int i = -1;
@@ -17,9 +19,10 @@ void InputOutput::read_textFile(string path) {
 		// Rad sa linijom teksta
 		++i;
 		if (i % 4 == 0) {//Sve linije gde su studenti stavlja u vektor studenata
-
-			studenti.push_back(line);
-			cout << line << endl;
+			if (file >> ime >> prezime >> id) {
+				studenti.push_back(line);
+				cout << ime << endl;
+			}
 		}
 	}
 

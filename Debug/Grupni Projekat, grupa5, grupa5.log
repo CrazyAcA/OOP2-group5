@@ -1,4 +1,4 @@
 ﻿  InputOutput.cpp
-f:\2. godina\3. semestar\oop2\projekat1\src\inputoutput.cpp(26): warning C4018: '<': signed/unsigned mismatch
+f:\2. godina\3. semestar\oop2\projekat1\src\inputoutput.cpp(29): warning C4018: '<': signed/unsigned mismatch
   Grupni Projekat, grupa5, grupa5.vcxproj -> F:\2. Godina\3. Semestar\OOP2\Projekat1\Debug\Grupni Projekat, grupa5, grupa5.exe
   Grupni Projekat, grupa5, grupa5.vcxproj -> F:\2. Godina\3. Semestar\OOP2\Projekat1\Debug\Grupni Projekat, grupa5, grupa5.pdb (Partial PDB)
