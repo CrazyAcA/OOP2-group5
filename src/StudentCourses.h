@@ -20,11 +20,11 @@ private:
 	Courses courses;
 
 public:
-
+	StudentCourses(Student s, Courses c) : student(s), courses(c) {};
 	Student get_student() const { return student; }
 	//Nisam siguran da li ovako treba za virtual
-	virtual double get_final_score();
-	virtual void display();//Info o studentu broj bodova i konacnu ocenu iz Courses
+	//virtual double get_final_score();
+	//virtual void display();//Info o studentu broj bodova i konacnu ocenu iz Courses
 	
 };
 

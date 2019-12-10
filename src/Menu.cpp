@@ -52,6 +52,9 @@ void Menu::read_students() {//Ovde se bira da li se cita tekstualna ili binarna 
 		cout << "Takav fajl ne postoji! Pokusajte ponovo(unesite quit za izlaz): " << endl;
 		cin.clear();
 		cin.ignore(100, '\n');
+		if (name == "quit") {
+			EXIT_FAILURE;
+		}
 	}
 
 	if (tip == 1) {

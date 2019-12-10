@@ -28,6 +28,7 @@ private:
 	static const double TEST_WEIGHT;
 
 	// private data
+	//string id;
 	vector<int> quiz;
 	vector<int> homework;
 	vector<int> test;
