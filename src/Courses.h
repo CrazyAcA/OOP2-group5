@@ -24,7 +24,6 @@ public:
 	static const int NUM_TESTS = 4; // Treci red
 
 private:
-
 	static const double QUIZ_WEIGHT;
 	static const double HOMEWORK_WEIGHT;
 	static const double TEST_WEIGHT;
@@ -34,7 +33,7 @@ private:
 	vector<int> quiz;
 	vector<int> homework;
 	vector<int> test;
-	double final_score;
+	double final_score = 0;
 	char letter_grade;
 
 public:
@@ -42,6 +41,8 @@ public:
 	Courses (): quiz(NUM_QUIZZES), homework(NUM_HW), test(NUM_TESTS) {}
 	Courses(const vector<int>& q, const vector<int>& h, const vector<int>& t)
 		: quiz(q), homework(h), test(t), final_score(0), letter_grade('F') {}
+	Courses(const vector<int>& q, const vector<int>& h, const vector<int>& t, double fs,char lg)//Dodao sam jos jedan konstuktor ako treba
+		: quiz(q), homework(h), test(t), final_score(fs), letter_grade(lg) {}
 
 	// utility functions
 	double get_final_score() const;

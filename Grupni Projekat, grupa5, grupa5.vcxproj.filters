@@ -58,7 +58,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="C:\Users\crazy\OneDrive\Desktop\studenti.txt">
+    <Text Include="studenti.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>

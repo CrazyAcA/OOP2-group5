@@ -16,7 +16,9 @@ void InputOutput::read_textFile(string path) {
 	std::ifstream file(path);
 	string line;
 	int i = -1;
-	int d = 0;
+	int d;
+	int t;
+	int k;
 	int brojac = 0;//brojac koji ce da broji posle koliko iteracija smo prosli jednog studenta i njegove ocene
 	vector<Student> studenti;
 	vector<int> domaci;
@@ -25,69 +27,61 @@ void InputOutput::read_textFile(string path) {
 
 	while (std::getline(file, line)) {
 		// Rad sa linijom teksta
-		++i;
-		if (i % 4 == 0) { //Sve linije gde su studenti stavlja u vektor studenata			
+		++i;	
+		if (i % 4 == 0) { //Sve linije gde su studenti stavlja u vektor studenata		
 			std::vector<std::string> arr = split(line, ' '); // Splituje liniju u vektor
 			Student s = Student(arr[0], arr[1], arr[2]); // Po indeksima u vektoru zovemo konstruktor
 			studenti.push_back(s);
-			brojac++;
+			brojac +=1;
 			//cout << s.get_first_name() << endl;
 		}
 
 		else if ((i - 1) % 4 == 0) {//Dodaje sve domace zadatke u vektor domaci
+			brojac += 1;
 			std::vector<std::string> arrD = split(line, ' ');
 			for (int j = 0; j < arrD.size(); j++) {
 				d = stoi(arrD.at(j));
 				domaci.push_back(d);
-				brojac++;
 			}
 		}
 		
 		else if ((i - 2) % 4 == 0) {//Dodaje sve testove u vektor testovi
+			brojac += 1;
 			std::vector<std::string> arrT = split(line, ' ');
 			for (int j = 0; j < arrT.size(); j++) {
-				d = stoi(arrT.at(j));
-				domaci.push_back(d);
-				brojac++;
+				t = stoi(arrT.at(j));
+				testovi.push_back(t);
 			}
 		}
 		else if ((i - 3) % 4 == 0) {//Dodaje sve kvizove u vektor kvizovi
+			brojac += 1;
 			std::vector<std::string> arrQ = split(line, ' ');
 			for (int j = 0; j < arrQ.size(); j++) {
-				d = stoi(arrQ.at(j));
-				domaci.push_back(d);
-				brojac++;
+				k = stoi(arrQ.at(j));
+				kvizovi.push_back(k);
 			}
 		}
-
 		if (brojac == 4) {
-			Courses c = Courses(domaci, testovi, kvizovi);//Pravi novi courses u svakoj iteraciji(za svakog studenta)
+			Courses c = Courses(kvizovi, domaci, testovi);//Pravi novi courses u svakoj iteraciji(za svakog studenta)
 			StudentCourses sc = StudentCourses(studenti[0], c);
-
 			brojac = 0;
 			domaci.clear();
 			testovi.clear();
 			kvizovi.clear();
 			studenti.clear();
+			c.calc_final_score();
+			c.calc_letter_grade();
+		//	c.display();
+
+			sc.display();
+			c.display();
+		//	cout << sc.get_final_score() << endl;
+
+
 		}
+		
 	}
 
-	
-
-	for (int j = 0; j < studenti.size(); j++) {
-		Student* Trenutni = &studenti[j];
-	}
-	for (int j = 0; j < domaci.size(); j++) {
-		cout << domaci.at(j);
-	}
-	cout << endl;
-	for (int j = 0; j < testovi.size(); j++) {
-		cout << testovi.at(j);
-	}
-	cout << endl;
-	for (int j = 0; j < kvizovi.size(); j++) {
-		cout << kvizovi.at(j);
-	}
 }
 
 

@@ -26,17 +26,6 @@ double StudentCourses::get_final_score() {
 };
 
 void StudentCourses::display() {
-	// Posto StudentCourses prima studenta u konstruktoru
-	// ja sam samo iskoristio njegove gettere za display
-	string ime, prezime, id;
-	ime = student.get_first_name();
-	prezime = student.get_last_name();
-	id = student.get_id();
-
-	cout << "Informacije o Studentu: " << endl;
-	cout << "Ime: " << ime << endl;
-	cout << "Prezime: " << prezime << endl;
-	cout << "id: " << id << endl;
-	cout << "-----------------------------" << endl;
+	student.display();
 
 }

@@ -150,7 +150,7 @@
     <ClInclude Include="src\StudentCourses.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="C:\Users\crazy\OneDrive\Desktop\studenti.txt" />
+    <Text Include="studenti.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,9 +17,9 @@ using namespace std;
 #include <iterator>
 #include "Courses.h"
 
-static const double QUIZ_WEIGHT = 0.05;
-static const double HOMEWORK_WEIGHT = 0.5;
-static const double TEST_WEIGHT = 0.45;
+const double Courses::QUIZ_WEIGHT = 0.05;
+const double Courses::HOMEWORK_WEIGHT = 0.5;
+const double Courses::TEST_WEIGHT = 0.45;
 
 double Courses::get_final_score() const{
 
@@ -28,36 +28,28 @@ double Courses::get_final_score() const{
 }
 
 void Courses::calc_final_score() {
-
-	int i = 0;
-
-	for (i; i < 6; i++) { // Racunamo za domaci
-
-		final_score = homework(i) * HOMEWORK_WEIGHT;
-
+	double domaci_uk = 0;
+	double testovi_uk = 0;
+	double kvizovi_uk = 0;
+	
+	for (int i = 0; i < 6; i++) { // Racunamo za domaci
+		domaci_uk += homework[i];
 	}
-	i = 0;
-	for (i; i < 4; i++) { // Racunamo za test
 
-		final_score = test(i) * TEST_WEIGHT;
-
+	for (int j = 0; j < 4; j++) { // Racunamo za test
+		testovi_uk += test[j];
 	}
-	i = 0;
-	for (i; i < 10; i++) { // Racunamo za kviz
-
-		final_score = quiz(i) * QUIZ_WEIGHT;
-
+	for (int k = 0; k < 10; k++) { // Racunamo za kviz
+		kvizovi_uk += quiz[k];
 	}
+	domaci_uk = domaci_uk * HOMEWORK_WEIGHT;
+	testovi_uk = testovi_uk * TEST_WEIGHT;
+	kvizovi_uk = kvizovi_uk * QUIZ_WEIGHT;
+	final_score = (domaci_uk / 6) + (testovi_uk / 4) + (kvizovi_uk / 10);
 	// Sada nam se u final score nalazi average ocena
 
 }
 
-void Courses::display() const{
-
-	cout << "Konacan broj bodova je: " << final_score << endl
-	cout << "Konacna ocena je: " << letter_grade << endl
-
-}
 
 void Courses::calc_letter_grade() {
 
@@ -79,3 +71,9 @@ void Courses::calc_letter_grade() {
 
 }
 
+void Courses::display() const {
+
+	cout << "Konacan broj bodova je: " << final_score << endl;
+	cout << "Konacna ocena je: " << letter_grade << endl;
+
+}

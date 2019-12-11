@@ -39,7 +39,7 @@ void Menu::read_students() {//Ovde se bira da li se cita tekstualna ili binarna 
 	cout << "Unesite ime fajla(bez ekstenzije .txt): " << endl;
 	string name;
 
-	while (!(cin >> name) || name != "studenti") { //Proverava da li je ime dobro
+	while (!(cin >> name)){ //|| name != "studenti") { //Proverava da li je ime dobro
 		cout << "Ne postoji fajl sa takvim imenom! Unesite opet: " << endl;
 		cin.clear();
 		cin.ignore(100, '\n');
