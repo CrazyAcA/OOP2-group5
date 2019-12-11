@@ -17,9 +17,11 @@ using std::vector;
 class Courses
 {
 public:
-	static const int NUM_QUIZZES = 10;
-	static const int NUM_HW = 6;
-	static const int NUM_TESTS = 4;
+	// Redovi u txt fajlu po pdf
+	// Prvi red je ime studenta
+	static const int NUM_QUIZZES = 10; // Cetvrti red
+	static const int NUM_HW = 6; // Drugi red
+	static const int NUM_TESTS = 4; // Treci red
 
 private:
 
