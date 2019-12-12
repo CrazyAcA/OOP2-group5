@@ -12,7 +12,7 @@
 
 #include <vector>
 #include "StudentCourses.h"
-
+using namespace std;
 using std::vector;
 
 class GroupOfStudents

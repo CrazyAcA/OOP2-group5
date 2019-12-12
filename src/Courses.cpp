@@ -21,7 +21,7 @@ const double Courses::QUIZ_WEIGHT = 0.05;
 const double Courses::HOMEWORK_WEIGHT = 0.5;
 const double Courses::TEST_WEIGHT = 0.45;
 
-double Courses::get_final_score() const{
+double Courses::get_final_score(){
 
 	return final_score;
 
@@ -46,6 +46,7 @@ void Courses::calc_final_score() {
 	testovi_uk = testovi_uk * TEST_WEIGHT;
 	kvizovi_uk = kvizovi_uk * QUIZ_WEIGHT;
 	final_score = (domaci_uk / 6) + (testovi_uk / 4) + (kvizovi_uk / 10);
+	final_score = round(final_score);
 	// Sada nam se u final score nalazi average ocena
 
 }

@@ -10,7 +10,7 @@ using namespace std;
 #include "Student.h"
 #include "Courses.h"
 #include "StudentCourses.h"
-
+#include "GroupOfStudents.h"
 void InputOutput::read_textFile(string path) {
 	
 	std::ifstream file(path);
@@ -64,6 +64,7 @@ void InputOutput::read_textFile(string path) {
 		if (brojac == 4) {
 			Courses c = Courses(kvizovi, domaci, testovi);//Pravi novi courses u svakoj iteraciji(za svakog studenta)
 			StudentCourses sc = StudentCourses(studenti[0], c);
+			
 			brojac = 0;
 			domaci.clear();
 			testovi.clear();
@@ -71,13 +72,12 @@ void InputOutput::read_textFile(string path) {
 			studenti.clear();
 			c.calc_final_score();
 			c.calc_letter_grade();
-		//	c.display();
-
+			cout << c.get_final_score() << endl;
+			cout<<sc.get_final_score()<<endl;
+			sc.get_student();
 			sc.display();
-			c.display();
-		//	cout << sc.get_final_score() << endl;
 
-
+			
 		}
 		
 	}

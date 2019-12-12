@@ -17,12 +17,7 @@ using namespace std;
 #include "StudentCourses.h"
 
 double StudentCourses::get_final_score() {
-
-	double ret;
-	ret = courses.get_final_score(); // Pozvao sam iz courses getter koji cemo koristiti
-	return ret;
-
-
+	return courses.get_final_score();
 };
 
 void StudentCourses::display() {

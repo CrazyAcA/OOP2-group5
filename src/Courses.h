@@ -45,7 +45,7 @@ public:
 		: quiz(q), homework(h), test(t), final_score(fs), letter_grade(lg) {}
 
 	// utility functions
-	double get_final_score() const;
+	double get_final_score();
 	void display() const;
 	void calc_final_score();
 	void calc_letter_grade();
