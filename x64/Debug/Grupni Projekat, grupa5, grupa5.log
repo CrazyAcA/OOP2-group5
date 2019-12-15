@@ -1,1 +1,0 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(638,5): error : Element <TargetMachine> has an invalid value of "MachineX64(/MACHINE:X64)".
