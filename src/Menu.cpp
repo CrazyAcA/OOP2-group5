@@ -8,8 +8,6 @@
 #include "Menu.h"
 //#include<iostream>
 #include <fstream>
-#include "InputOutput.h"
-
 
 void Menu::display_menu() {//Ispis menija (display_menu)
 	cout << "Izaberite opciju iz menija: " << endl
@@ -18,7 +16,8 @@ void Menu::display_menu() {//Ispis menija (display_menu)
 		<< "3.Prikaz studenta" << endl
 		<< "4.Prikaz studenata(sortirano)" << endl
 		<< "5.Prikaz studenata sa najboljim prosekom" << endl
-		<< "6.Izlaz iz aplikacije" << endl
+		<< "6.Prikaz studenta na osnovu oznake" << endl
+		<< "7.Izlaz iz aplikacije" << endl
 		<< "Unesite:" << endl;
 }
 void Menu::display_info() {//Informacije o autorima
@@ -37,14 +36,20 @@ void Menu::read_students() {//Ovde se bira da li se cita tekstualna ili binarna 
 
 	//Unosi se ime fajla
 	cout << "Unesite ime fajla(bez ekstenzije .txt): " << endl;
+	cout << "quit za izlaz!" << endl;
 	string name;
 
-	while (!(cin >> name)){ //|| name != "studenti") { //Proverava da li je ime dobro
-		cout << "Ne postoji fajl sa takvim imenom! Unesite opet: " << endl;
-		cin.clear();
-		cin.ignore(100, '\n');
-	}
-
+	
+		while (!(cin >> name) || name != "studenti") { //Proverava da li je ime dobro
+			cout << "Ne postoji fajl sa takvim imenom! Unesite opet: " << endl;
+			cin.clear();
+			cin.ignore(100, '\n');
+			if (name == "quit") {
+				cout << "Izasli ste iz programa!" << endl;
+				exit(0);
+			}
+		}
+	
 	string fileName = name + ".txt";//Krajnje ime fajla
 	ifstream file;
 	file.open(fileName);//Otvara fajl
@@ -52,9 +57,6 @@ void Menu::read_students() {//Ovde se bira da li se cita tekstualna ili binarna 
 		cout << "Takav fajl ne postoji! Pokusajte ponovo(unesite quit za izlaz): " << endl;
 		cin.clear();
 		cin.ignore(100, '\n');
-		if (name == "quit") {
-			EXIT_FAILURE;
-		}
 	}
 
 	if (tip == 1) {
@@ -65,3 +67,19 @@ void Menu::read_students() {//Ovde se bira da li se cita tekstualna ili binarna 
 	}
 }
 
+//void Menu::display_one() {
+//	gs.display_one_student();
+//}
+
+void Menu::display_students() {
+	
+	gs.display();
+}
+
+void Menu::display_students_sorted() {
+	gs.display_sorted();
+}
+
+void Menu::display_highest_score() {
+	gs.display_highest();
+}

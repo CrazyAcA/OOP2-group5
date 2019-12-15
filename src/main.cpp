@@ -66,6 +66,11 @@ int main()
 		case Menu::HIGHEST:
 			m.display_highest_score();
 			break;
+		case Menu::DISPLAY_ONE:
+			m.display_one();
+			break;
+		case Menu::EXIT:
+			EXIT_SUCCESS();
 		}
 		m.display_menu();
 	} while (option != Menu::EXIT);

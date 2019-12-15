@@ -22,7 +22,6 @@ private:
 public:
 	StudentCourses(Student s, Courses c) : student(s), courses(c) {};
 	Student get_student() const { return student; }
-//	Courses get_courses() const { return courses; }
 	
 	double get_final_score();
 	void display();

@@ -22,7 +22,6 @@ const double Courses::HOMEWORK_WEIGHT = 0.5;
 const double Courses::TEST_WEIGHT = 0.45;
 
 double Courses::get_final_score(){
-
 	return final_score;
 
 }
@@ -31,7 +30,6 @@ void Courses::calc_final_score() {
 	double domaci_uk = 0;
 	double testovi_uk = 0;
 	double kvizovi_uk = 0;
-	
 	for (int i = 0; i < 6; i++) { // Racunamo za domaci
 		domaci_uk += homework[i];
 	}

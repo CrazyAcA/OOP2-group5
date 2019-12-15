@@ -1,3 +1,4 @@
+
 //============================================================================
 // File Name   : GroupOfStudents.h
 // Authors     : You
@@ -12,6 +13,7 @@
 
 #include <vector>
 #include "StudentCourses.h"
+
 using namespace std;
 using std::vector;
 
@@ -19,18 +21,19 @@ class GroupOfStudents
 {
 private:
 	vector <StudentCourses> st_vec;
-	void search_for_highest(vector<int>& indices_max) const; // utility
+
+//	void search_for_highest(vector<int>& indices_max) const; // utility
 
 public:
 	GroupOfStudents() {}
-	GroupOfStudents(const vector< StudentCourses >& v);
-
+	GroupOfStudents(const vector< StudentCourses >& v) : st_vec(v) {}
+	
 	// Trazene metode koje treba da se dodaju
 	void display();
 	void display_sorted();
 	void display_highest();
 	void write_to_file();
-	const vector<StudentCourses>& get_student_courses() const;
+	const vector<StudentCourses>& get_student_courses() const { return st_vec; }
 };
 
 #endif /*GROUPOFSTUDENTS_H_*/

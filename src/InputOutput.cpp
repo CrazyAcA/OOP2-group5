@@ -7,10 +7,6 @@ using namespace std;
 #include <vector>
 #include <iterator>
 
-#include "Student.h"
-#include "Courses.h"
-#include "StudentCourses.h"
-#include "GroupOfStudents.h"
 void InputOutput::read_textFile(string path) {
 	
 	std::ifstream file(path);
@@ -24,6 +20,8 @@ void InputOutput::read_textFile(string path) {
 	vector<int> domaci;
 	vector<int> testovi;
 	vector<int> kvizovi;
+	vector<StudentCourses> st_vector;
+	vector<string> oznake;
 
 	while (std::getline(file, line)) {
 		// Rad sa linijom teksta
@@ -31,7 +29,7 @@ void InputOutput::read_textFile(string path) {
 		if (i % 4 == 0) { //Sve linije gde su studenti stavlja u vektor studenata		
 			std::vector<std::string> arr = split(line, ' '); // Splituje liniju u vektor
 			Student s = Student(arr[0], arr[1], arr[2]); // Po indeksima u vektoru zovemo konstruktor
-			studenti.push_back(s);
+			studenti.push_back(s);		
 			brojac +=1;
 			//cout << s.get_first_name() << endl;
 		}
@@ -64,7 +62,8 @@ void InputOutput::read_textFile(string path) {
 		if (brojac == 4) {
 			Courses c = Courses(kvizovi, domaci, testovi);//Pravi novi courses u svakoj iteraciji(za svakog studenta)
 			StudentCourses sc = StudentCourses(studenti[0], c);
-			
+		
+			st_vector.push_back(sc);//Vektor za GroupOfStudents
 			brojac = 0;
 			domaci.clear();
 			testovi.clear();
@@ -72,15 +71,16 @@ void InputOutput::read_textFile(string path) {
 			studenti.clear();
 			c.calc_final_score();
 			c.calc_letter_grade();
-			cout << c.get_final_score() << endl;
-			cout<<sc.get_final_score()<<endl;
-			sc.get_student();
-			sc.display();
-
+		
 			
 		}
 		
 	}
+//	cout << st_vec.size() << endl;
+	GroupOfStudents grp = GroupOfStudents(st_vector);
+	/*grp.display();
+	grp.display_sorted();
+	grp.display_highest();*/
 
 }
 

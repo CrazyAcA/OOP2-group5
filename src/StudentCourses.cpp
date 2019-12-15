@@ -17,7 +17,8 @@ using namespace std;
 #include "StudentCourses.h"
 
 double StudentCourses::get_final_score() {
-	return courses.get_final_score();
+	 courses.calc_final_score();
+	 return courses.get_final_score();
 };
 
 void StudentCourses::display() {

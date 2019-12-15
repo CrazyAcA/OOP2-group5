@@ -15,6 +15,11 @@ using namespace std;
 #include <sstream>
 #include <vector>
 #include <iterator>
+
+#include "Student.h"
+#include "Courses.h"
+#include "StudentCourses.h"
+#include "GroupOfStudents.h"
 using std::string;
 
 class InputOutput
