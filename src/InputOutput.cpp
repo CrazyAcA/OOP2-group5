@@ -7,7 +7,7 @@ using namespace std;
 #include <vector>
 #include <iterator>
 
-void InputOutput::read_textFile(string path) {
+vector<StudentCourses> InputOutput::read_textFile(string path) {
 	
 	std::ifstream file(path);
 	string line;
@@ -21,7 +21,7 @@ void InputOutput::read_textFile(string path) {
 	vector<int> testovi;
 	vector<int> kvizovi;
 	vector<StudentCourses> st_vector;
-	vector<string> oznake;
+	
 
 	while (std::getline(file, line)) {
 		// Rad sa linijom teksta
@@ -64,6 +64,7 @@ void InputOutput::read_textFile(string path) {
 			StudentCourses sc = StudentCourses(studenti[0], c);
 		
 			st_vector.push_back(sc);//Vektor za GroupOfStudents
+			
 			brojac = 0;
 			domaci.clear();
 			testovi.clear();
@@ -76,14 +77,12 @@ void InputOutput::read_textFile(string path) {
 		}
 		
 	}
-//	cout << st_vec.size() << endl;
 	GroupOfStudents grp = GroupOfStudents(st_vector);
-	/*grp.display();
-	grp.display_sorted();
-	grp.display_highest();*/
+
+	
+	return st_vector;
 
 }
-
 
 void InputOutput::read_binaryFile(string path) {
 	// char buffer[100]; ??
@@ -101,26 +100,20 @@ void InputOutput::read_binaryFile(string path) {
 }
 
 // Moramo u write dodati neku listu koja se upisuje
-void InputOutput::write_textFile(string path) {
+void InputOutput::write_textFile(vector<StudentCourses> vektor) {
+	cout << "Unesite ime fajla(bez ekstenzije .txt): " << endl;
+	string path;
 
-	std::ofstream file(path);
-	if (file.is_open()) {
-
-		string line;
-
-		do {
-			std::getline(cin, line);
-			file << line << endl;
-
-
-		} while (line != "");
-
-		file.close();
+	while (!(cin >> path)) { //Proverava da li je ime dobro
+		cout << "Pogresan unos! Unesite opet: " << endl;
+		cin.clear();
+		cin.ignore(100, '\n');
 
 	}
-
-	else cerr << "Fajl nemoguce otvoriti.";
-
+	
+	GroupOfStudents group = GroupOfStudents(vektor);
+	group.write_to_file(path);
+	
 }
 
 // isto i ovde listu

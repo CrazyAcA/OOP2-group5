@@ -22,7 +22,7 @@ const double Courses::HOMEWORK_WEIGHT = 0.5;
 const double Courses::TEST_WEIGHT = 0.45;
 
 double Courses::get_final_score(){
-	return final_score;
+	return round(final_score);
 
 }
 
@@ -69,6 +69,28 @@ void Courses::calc_letter_grade() {
 	}
 
 }
+
+char Courses::return_letter_grade() {
+
+	if (final_score >= 92) {
+		letter_grade = 'A';
+	}
+	else if (final_score >= 82 && final_score < 92) {
+		letter_grade = 'B';
+	}
+	else if (final_score >= 72 && final_score < 82) {
+		letter_grade = 'C';
+	}
+	else if (final_score >= 62 && final_score < 72) {
+		letter_grade = 'D';
+	}
+	else { // final_score = 50
+		letter_grade = 'F';
+	}
+
+	return letter_grade;
+}
+
 
 void Courses::display() const {
 

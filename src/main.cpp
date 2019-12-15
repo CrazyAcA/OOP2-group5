@@ -13,6 +13,7 @@ using namespace std;
 
 int main()
 {
+	vector<StudentCourses> st_vector;
 	Menu m;
 	int option;
 	m.display_menu();
@@ -68,6 +69,9 @@ int main()
 			break;
 		case Menu::DISPLAY_ONE:
 			m.display_one();
+			break;
+		case Menu::WRITE_TO_FILE:
+			m.write_to_file();
 			break;
 		case Menu::EXIT:
 			EXIT_SUCCESS();

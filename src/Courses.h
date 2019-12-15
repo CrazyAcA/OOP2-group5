@@ -49,6 +49,7 @@ public:
 	void display() const;
 	void calc_final_score();
 	void calc_letter_grade();
+	char return_letter_grade();
 };
 
 

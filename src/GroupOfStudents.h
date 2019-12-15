@@ -12,6 +12,8 @@
 #define GROUPOFSTUDENTS_H_
 
 #include <vector>
+#include <fstream>
+#include <iostream>
 #include "StudentCourses.h"
 
 using namespace std;
@@ -29,10 +31,11 @@ public:
 	GroupOfStudents(const vector< StudentCourses >& v) : st_vec(v) {}
 	
 	// Trazene metode koje treba da se dodaju
-	void display();
-	void display_sorted();
-	void display_highest();
-	void write_to_file();
+	void display(vector<StudentCourses> st_vector);
+	void display_sorted(vector<StudentCourses> st_vector);
+	void display_highest(vector<StudentCourses> st_vector);
+	void display_one_student(vector<StudentCourses> st_vector);
+	void write_to_file(string path);
 	const vector<StudentCourses>& get_student_courses() const { return st_vec; }
 };
 

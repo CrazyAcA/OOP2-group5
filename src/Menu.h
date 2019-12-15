@@ -12,7 +12,8 @@
 
 #include <string>
 #include <stdexcept>
-#include "GroupOfStudents.h"
+#include <vector>
+//#include "GroupOfStudents.h"
 #include "InputOutput.h"
 using namespace std;
 using std::string;
@@ -28,11 +29,11 @@ public:
 		InvalidFile(): runtime_error("Invalid input file name") {}
 	};
 
-	enum OPTIONS{ INFO=1, READ_FILE, DISPLAY, DISPLAY_SORTED, HIGHEST, DISPLAY_ONE, EXIT };
+	enum OPTIONS{ INFO=1, READ_FILE, DISPLAY, DISPLAY_SORTED, HIGHEST, DISPLAY_ONE, WRITE_TO_FILE,EXIT };
 		
 private:
 	GroupOfStudents gs;
-
+	vector <StudentCourses> st_vector;
 public:
 	Menu() {};
 
@@ -40,10 +41,13 @@ public:
 	void display_menu();
 	void display_info();
 	void read_students();
+	
 	void display_students();
 	void display_students_sorted();
 	void display_highest_score();
-	void display_one() {};
+	void display_one();
+	void write_to_file();
+	void set_vektor(vector<StudentCourses> vektor);
 };
 
 #endif /*MENU_H_*/
